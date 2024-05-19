@@ -24,12 +24,15 @@
         <link rel="stylesheet" type="text/css" href="components/soundmanager/templates/qtradio-player/css/flashblock.css" />
         <link rel="stylesheet" type="text/css" href="components/soundmanager/templates/qtradio-player/css/qt-360player-volume.css" />
 
-        
+        <!-- Chat css file -->
+        <link rel="stylesheet" href="css/chat.css">
+
         <!-- Main css file -->
         <link rel="stylesheet" href="css/qt-main.css"><!-- INCLUDES THE CHOSEN FRAMEWORK VIA #IMPORT AND SASS -->
         
         <!-- Custom typography settings and google fonts -->
         <link rel="stylesheet" href="css/qt-typography.css">
+
     </head>
     <body>
     <!-- QT HEADER END ================================ -->
@@ -46,7 +49,7 @@
 				<div class="qt-playercontainer-musicplayer" id="qtmusicplayer">
 					<div class="qt-musicplayer">
 						<div class="ui360 ui360-vis qt-ui360">
-							<a id="playerlink" href="http://stream.zeno.fm/qw0ngtsc9x8uv">/a>
+							<a id="playerlink" href="http://stream.zeno.fm/qw0ngtsc9x8uv"></a>
 <!-- para atualizar  ========================= -->							
 							
 <!-- finaliza a seção  ========================= -->							
@@ -66,8 +69,8 @@
 					<hr class="qt-inline-textdeco">
 				</div>
 			</div>
-			<div id="playerimage" class="qt-header-bg" data-bgimage="imagestemplate/full-1600-700.jpg">
-				<img src="imagestemplate/full-1600-700.jpg" alt="Featured image" width="690" height="302">
+			<div id="playerimage" class="qt-header-bg" data-bgimage="imagestemplate/large5-1170-512.jpg">
+				<img src="imagestemplate/large5-1170-512.jpg" alt="Featured image" width="690" height="302">
 			</div>
 		</div>
 		<!-- this is for xml radio feed -->
@@ -78,22 +81,30 @@
 			<ul class="qt-content-aside qt-channelslist qt-negative qt-content-primary">
 				<li class="qt-channel">
 					<a href="#!" class="qt-ellipsis" data-title="MESETA 1" data-subtitle="Rock & Pop" data-background="imagestemplate/photo-squared-500-500.jpg" data-logo="imagestemplate/radio-logo.png" data-playtrack="http://stream.zeno.fm/qw0ngtsc9x8uv" data-host="173.192.105.231" data-port="3540" data-stats_path="" data-played_path="" data-channel="">
-						<img src="imagestemplate/radio-logo.png" alt="logo" class="qt-radiologo dripicons-media-play" width="80" height="80">
+						<img src="imagestemplate/BLOG-radio-wordpress-theme-07-1024x768.jpg" alt="logo" class="qt-radiologo dripicons-media-play" width="80" height="80">
 						<i class="dripicons-media-play"></i> MESETA 1 - Rock & Pop
 					</a>
 				</li>
 				<li class="qt-channel">
 					<a href="#!" class="qt-ellipsis" data-title="MESETA 2" data-subtitle="Folk - Perú" data-background="imagestemplate/large-1170-512.jpg" data-logo="imagestemplate/radio-logo.png" data-playtrack="http://stream.zeno.fm/7ux5x5c3k0hvv" data-host="173.192.105.231" data-port="3540" data-stats_path="" data-played_path="" data-channel="">
-						<img src="imagestemplate/radio-logo.png" alt="logo" class="qt-radiologo" width="80" height="80">
+						<img src="imagestemplate/BLOG-radio-wordpress-theme-07-1024x768.jpg" alt="logo" class="qt-radiologo" width="80" height="80">
 						<i class="dripicons-media-play"></i> MESETA 2 - Folk - Perú
-						</a>
+					</a>
 				</li>
 			</ul>
 		</div>
+        <div class="chat-container">
+            <iframe src="https://www3.cbox.ws/box/?boxid=3538038&boxtag=zlWtWH" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
+        </div>
+        
 		<!-- CHANNELS LIST END ========================= -->
 
-        </div>        
+    </div>        
         <!-- QT BODY END ================================ -->
+
+        <!-- CHAT BUTTON SCRIPTS ================================ -->
+        <script>window['CboxReady'] = function (Cbox) {Cbox('button', '3-3538038-zlWtWH');}</script>
+        <script src="https://static.cbox.ws/embed/2.js" async></script>
 
         <!-- QT FOOTER SCRIPTS ================================ -->
         <script src="js/modernizr-2.8.3-respond-1.4.2.min.js"></script>
@@ -129,11 +140,8 @@
         <!-- Popup -->
         <script src="components/popup/popup.js"></script>
 
-
         <!-- MAIN JAVASCRIPT FILE ================================ -->
         <script src="js/qt-main.js"></script>
-
-        
 
     </body>
 </html>
