@@ -24,20 +24,69 @@
         <link rel="stylesheet" type="text/css" href="components/soundmanager/templates/qtradio-player/css/flashblock.css" />
         <link rel="stylesheet" type="text/css" href="components/soundmanager/templates/qtradio-player/css/qt-360player-volume.css" />
 
-        <!-- Chat css file -->
-        <link rel="stylesheet" href="css/chat.css">
-
         <!-- Main css file -->
         <link rel="stylesheet" href="css/qt-main.css"><!-- INCLUDES THE CHOSEN FRAMEWORK VIA #IMPORT AND SASS -->
         
         <!-- Custom typography settings and google fonts -->
         <link rel="stylesheet" href="css/qt-typography.css">
 
+        <!-- Custom schedule css -->
+        <style>
+            .qt-schedule {
+                text-align: center;
+                margin: 20px 0;
+            }
+            .qt-schedule h2 {
+                margin-bottom: 20px;
+            }
+            .qt-timeline {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            .qt-timeline-item {
+                display: inline-block;
+                text-align: center;
+                padding: 10px;
+                position: relative;
+                flex: 0 0 auto;
+            }
+            .qt-timeline-item::after {
+                content: '';
+                width: 2px;
+                height: 50px;
+                background: #ddd;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                z-index: -1;
+            }
+            .qt-timeline-item:first-child::after {
+                display: none;
+            }
+            .qt-timeline-icon {
+                font-size: 30px;
+                margin-bottom: 10px;
+            }
+            .qt-timeline-time {
+                font-weight: bold;
+            }
+            .qt-timeline-desc {
+                font-size: 14px;
+            }
+            .qt-timeline-item.highlight {
+                background: #f0f0f07e;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+        </style>
     </head>
     <body>
     <!-- QT HEADER END ================================ -->
-    <div class="qt-parentcontainer">
-		        
+    <div class="qt-parentcontainer">        
 		<!-- PLAYER ========================= -->
 		<div id="qtplayercontainer" data-playervolume="true" data-accentcolor="#dd0e34" data-accentcolordark="#ff0442" data-textcolor="#ffffff" data-soundmanagerurl="./components/soundmanager/swf/" class="qt-playercontainer qt-playervolume qt-clearfix qt-content-primary">
 			<div class="qt-playercontainer-content qt-vertical-padding-m">
@@ -50,11 +99,8 @@
 					<div class="qt-musicplayer">
 						<div class="ui360 ui360-vis qt-ui360">
 							<a id="playerlink" href="http://stream.zeno.fm/qw0ngtsc9x8uv"></a>
-<!-- para atualizar  ========================= -->							
-							
+<!-- para atualizar  ========================= -->											
 <!-- finaliza a seção  ========================= -->							
-
-							
 						</div>
 					</div>
 				</div>
@@ -81,24 +127,61 @@
 			<ul class="qt-content-aside qt-channelslist qt-negative qt-content-primary">
 				<li class="qt-channel">
 					<a href="#!" class="qt-ellipsis" data-title="MESETA 1" data-subtitle="Rock & Pop" data-background="imagestemplate/photo-squared-500-500.jpg" data-logo="imagestemplate/radio-logo.png" data-playtrack="http://stream.zeno.fm/qw0ngtsc9x8uv" data-host="173.192.105.231" data-port="3540" data-stats_path="" data-played_path="" data-channel="">
-						<img src="imagestemplate/BLOG-radio-wordpress-theme-07-1024x768.jpg" alt="logo" class="qt-radiologo dripicons-media-play" width="80" height="80">
+						<img src="imagestemplate/close-up-of-an-electric-guitar-on-wooden-surface.jpg" alt="logo" class="qt-radiologo dripicons-media-play" width="80" height="80">
 						<i class="dripicons-media-play"></i> MESETA 1 - Rock & Pop
 					</a>
 				</li>
 				<li class="qt-channel">
 					<a href="#!" class="qt-ellipsis" data-title="MESETA 2" data-subtitle="Folk - Perú" data-background="imagestemplate/large-1170-512.jpg" data-logo="imagestemplate/radio-logo.png" data-playtrack="http://stream.zeno.fm/7ux5x5c3k0hvv" data-host="173.192.105.231" data-port="3540" data-stats_path="" data-played_path="" data-channel="">
-						<img src="imagestemplate/BLOG-radio-wordpress-theme-07-1024x768.jpg" alt="logo" class="qt-radiologo" width="80" height="80">
+						<img src="imagestemplate/bamboo-flute-2897460_1280.jpg" alt="logo" class="qt-radiologo" width="80" height="80">
 						<i class="dripicons-media-play"></i> MESETA 2 - Folk - Perú
 					</a>
 				</li>
+                <!-- CHANNELS LIST END ========================= -->
+                <!-- SCHEDULE ========================= -->
+                <li class="qt-channel">
+                    <div class="qt-schedule">
+                        <h2>Radio Schedule</h2>
+                        <div class="qt-timeline" id="qt-timeline">
+                            <div class="qt-timeline-item" data-day="1">
+                                <div class="qt-timeline-icon">🎸</div>
+                                <div class="qt-timeline-time">08:00 - 10:00</div>
+                                <div class="qt-timeline-desc">Monday<br>Rock Classics</div>
+                            </div>
+                            <div class="qt-timeline-item" data-day="2">
+                                <div class="qt-timeline-icon">🎷</div>
+                                <div class="qt-timeline-time">10:00 - 12:00</div>
+                                <div class="qt-timeline-desc">Tuesday<br>Morning Jazz</div>
+                            </div>
+                            <div class="qt-timeline-item" data-day="3">
+                                <div class="qt-timeline-icon">🎤</div>
+                                <div class="qt-timeline-time">12:00 - 14:00</div>
+                                <div class="qt-timeline-desc">Wednesday<br>Pop Hits</div>
+                            </div>
+                            <div class="qt-timeline-item" data-day="4">
+                                <div class="qt-timeline-icon">🌾</div>
+                                <div class="qt-timeline-time">14:00 - 16:00</div>
+                                <div class="qt-timeline-desc">Thursday<br>Country Roads</div>
+                            </div>
+                            <div class="qt-timeline-item" data-day="5">
+                                <div class="qt-timeline-icon">🎧</div>
+                                <div class="qt-timeline-time">16:00 - 18:00</div>
+                                <div class="qt-timeline-desc">Friday<br>Dance Party</div>
+                            </div>
+                            <div class="qt-timeline-item" data-day="6">
+                                <div class="qt-timeline-icon">🎻</div>
+                                <div class="qt-timeline-time">18:00 - 20:00</div>
+                                <div class="qt-timeline-desc">Saturday<br>Classical Evenings</div>
+                            </div>
+                            <div class="qt-timeline-item" data-day="0">
+                                <div class="qt-timeline-icon">🌅</div>
+                                <div class="qt-timeline-time">20:00 - 22:00</div>
+                                <div class="qt-timeline-desc">Sunday<br>Chill Vibes</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
 			</ul>
-		</div>
-        <div class="chat-container">
-            <iframe src="https://www3.cbox.ws/box/?boxid=3538038&boxtag=zlWtWH" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
-        </div>
-        
-		<!-- CHANNELS LIST END ========================= -->
-
     </div>        
         <!-- QT BODY END ================================ -->
 
@@ -143,5 +226,18 @@
         <!-- MAIN JAVASCRIPT FILE ================================ -->
         <script src="js/qt-main.js"></script>
 
+        <!-- SCRIPTS FOR SCHEDULE ================================ -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var today = new Date().getDay(); // 0 (Sunday) - 6 (Saturday)
+                var timelineItems = document.querySelectorAll(".qt-timeline-item");
+        
+                timelineItems.forEach(function(item) {
+                    if (parseInt(item.getAttribute("data-day")) === today) {
+                        item.classList.add("highlight");
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
