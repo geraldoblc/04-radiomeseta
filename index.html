@@ -7,6 +7,8 @@
         <meta name="description" content="Radio Meseta">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
         
+        <link rel="shortcut icon" href="imagestemplate/favicon.ico" type="image/x-icon">
+
         <!-- icons -->
         <link href='fonts/dripicons/webfont.css' rel='stylesheet' type='text/css'>
         <link href='fonts/qticons/qticons.css' rel='stylesheet' type='text/css'>
@@ -82,6 +84,10 @@
                 border-radius: 10px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             }
+            .qt-margin {
+                height: 20px;
+                background-color: white;
+            }
         </style>
     </head>
     <body>
@@ -115,8 +121,8 @@
 					<hr class="qt-inline-textdeco">
 				</div>
 			</div>
-			<div id="playerimage" class="qt-header-bg" data-bgimage="imagestemplate/large5-1170-512.jpg">
-				<img src="imagestemplate/large5-1170-512.jpg" alt="Featured image" width="690" height="302">
+			<div id="playerimage" class="qt-header-bg" data-bgimage="imagestemplate/meseta1170a.jpg">
+				<img src="imagestemplate/meseta1170a.jpg" alt="Featured image" width="690" height="302">
 			</div>
 		</div>
 		<!-- this is for xml radio feed -->
@@ -126,23 +132,108 @@
 		<div class="qt-part-channels-list">
 			<ul class="qt-content-aside qt-channelslist qt-negative qt-content-primary">
 				<li class="qt-channel">
-					<a href="#!" class="qt-ellipsis" data-title="MESETA 1" data-subtitle="Rock & Pop" data-background="imagestemplate/photo-squared-500-500.jpg" data-logo="imagestemplate/radio-logo.png" data-playtrack="http://stream.zeno.fm/qw0ngtsc9x8uv" data-host="173.192.105.231" data-port="3540" data-stats_path="" data-played_path="" data-channel="">
+					<a href="#!" class="qt-ellipsis" data-title="MESETA 1" data-subtitle="Rock & Pop" data-background="" data-logo="" data-playtrack="http://stream.zeno.fm/qw0ngtsc9x8uv" data-host="173.192.105.231" data-port="3540" data-stats_path="" data-played_path="" data-channel="">
 						<img src="imagestemplate/close-up-of-an-electric-guitar-on-wooden-surface.jpg" alt="logo" class="qt-radiologo dripicons-media-play" width="80" height="80">
 						<i class="dripicons-media-play"></i> MESETA 1 - Rock & Pop
 					</a>
 				</li>
 				<li class="qt-channel">
-					<a href="#!" class="qt-ellipsis" data-title="MESETA 2" data-subtitle="Folk - Perú" data-background="imagestemplate/large-1170-512.jpg" data-logo="imagestemplate/radio-logo.png" data-playtrack="http://stream.zeno.fm/7ux5x5c3k0hvv" data-host="173.192.105.231" data-port="3540" data-stats_path="" data-played_path="" data-channel="">
+					<a href="#!" class="qt-ellipsis" data-title="MESETA 2" data-subtitle="Folk - Perú" data-background="" data-logo="" data-playtrack="http://stream.zeno.fm/7ux5x5c3k0hvv" data-host="173.192.105.231" data-port="3540" data-stats_path="" data-played_path="" data-channel="">
 						<img src="imagestemplate/bamboo-flute-2897460_1280.jpg" alt="logo" class="qt-radiologo" width="80" height="80">
 						<i class="dripicons-media-play"></i> MESETA 2 - Folk - Perú
 					</a>
 				</li>
+                <li>
+                    <div class="qt-margin">
+                    </div>
+                </li>
                 <!-- CHANNELS LIST END ========================= -->
                 <!-- SCHEDULE ========================= -->
                 <li class="qt-channel">
                     <div class="qt-schedule">
-                        <h2>Radio Schedule</h2>
+                        <h3 id="qtradiotitle" class="qt-text-shadow">MESETA 1 - Schedule</h3><br>
                         <div class="qt-timeline" id="qt-timeline">
+                            <div class="qt-timeline-item" data-day="1">
+                                <div class="qt-timeline-icon">🎸</div>
+                                <div class="qt-timeline-time">08:00 - 10:00</div>
+                                <div class="qt-timeline-desc">Monday<br>Rock Classics<br><strong>Chuco</strong></div>
+                            </div>
+                            <div class="qt-timeline-item" data-day="2">
+                                <div class="qt-timeline-icon">🎷</div>
+                                <div class="qt-timeline-time">10:00 - 12:00</div>
+                                <div class="qt-timeline-desc">Tuesday<br>Morning Jazz<br><strong>Chuco</strong></div>
+                            </div>
+                            <div class="qt-timeline-item" data-day="3">
+                                <div class="qt-timeline-icon">🎤</div>
+                                <div class="qt-timeline-time">12:00 - 14:00</div>
+                                <div class="qt-timeline-desc">Wednesday<br>Pop Hits<br><strong>Chuco</strong></div>
+                            </div>
+                            <div class="qt-timeline-item" data-day="4">
+                                <div class="qt-timeline-icon">🌾</div>
+                                <div class="qt-timeline-time">14:00 - 16:00</div>
+                                <div class="qt-timeline-desc">Thursday<br>Country Roads<br><strong>Chuco</strong></div>
+                            </div>
+                            <div class="qt-timeline-item" data-day="5">
+                                <div class="qt-timeline-icon">🎧</div>
+                                <div class="qt-timeline-time">16:00 - 18:00</div>
+                                <div class="qt-timeline-desc">Friday<br>Dance Party<br><strong>Chuco</strong></div>
+                            </div>
+                            <div class="qt-timeline-item" data-day="6">
+                                <div class="qt-timeline-icon">🎻</div>
+                                <div class="qt-timeline-time">18:00 - 20:00</div>
+                                <div class="qt-timeline-desc">Saturday<br>Classical Evenings<br><strong>Chuco</strong></div>
+                            </div>
+                            <div class="qt-timeline-item" data-day="0">
+                                <div class="qt-timeline-icon">🌅</div>
+                                <div class="qt-timeline-time">20:00 - 22:00</div>
+                                <div class="qt-timeline-desc">Sunday<br>Chill Vibes<br><strong>Chuco</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="qt-margin">
+                    </div>
+                </li>
+                <li class="qt-channel">
+                    <div class="qt-schedule">
+                        <h3 id="qtradiotitle" class="qt-text-shadow">MESETA 2 - Schedule</h3><br>
+                        <div class="qt-timeline" id="qt-timeline">
+                            <div class="qt-timeline-item" data-day="1">
+                                <div class="qt-timeline-icon">🎸</div>
+                                <div class="qt-timeline-time">08:00 - 10:00</div>
+                                <div class="qt-timeline-desc">Monday<br>Rock Classics</div>
+                            </div>
+                            <div class="qt-timeline-item" data-day="2">
+                                <div class="qt-timeline-icon">🎷</div>
+                                <div class="qt-timeline-time">10:00 - 12:00</div>
+                                <div class="qt-timeline-desc">Tuesday<br>Morning Jazz</div>
+                            </div>
+                            <div class="qt-timeline-item" data-day="3">
+                                <div class="qt-timeline-icon">🎤</div>
+                                <div class="qt-timeline-time">12:00 - 14:00</div>
+                                <div class="qt-timeline-desc">Wednesday<br>Pop Hits</div>
+                            </div>
+                            <div class="qt-timeline-item" data-day="4">
+                                <div class="qt-timeline-icon">🌾</div>
+                                <div class="qt-timeline-time">14:00 - 16:00</div>
+                                <div class="qt-timeline-desc">Thursday<br>Country Roads</div>
+                            </div>
+                            <div class="qt-timeline-item" data-day="5">
+                                <div class="qt-timeline-icon">🎧</div>
+                                <div class="qt-timeline-time">16:00 - 18:00</div>
+                                <div class="qt-timeline-desc">Friday<br>Dance Party</div>
+                            </div>
+                            <div class="qt-timeline-item" data-day="6">
+                                <div class="qt-timeline-icon">🎻</div>
+                                <div class="qt-timeline-time">18:00 - 20:00</div>
+                                <div class="qt-timeline-desc">Saturday<br>Classical Evenings</div>
+                            </div>
+                            <div class="qt-timeline-item" data-day="0">
+                                <div class="qt-timeline-icon">🌅</div>
+                                <div class="qt-timeline-time">20:00 - 22:00</div>
+                                <div class="qt-timeline-desc">Sunday<br>Chill Vibes</div>
+                            </div>
                             <div class="qt-timeline-item" data-day="1">
                                 <div class="qt-timeline-icon">🎸</div>
                                 <div class="qt-timeline-time">08:00 - 10:00</div>
@@ -239,5 +330,21 @@
                 });
             });
         </script>
+
+        <!-- SCRIPTS FOR BACKGROUND IMAGE ================================ -->
+        <!-- Conferir este trecho com calma depois e corrigi o necessário
+        <script>
+            window.onload = function() {
+                var playlist = document.querySelector('a[data-title="MESETA 2"]');
+                var playerImage = document.getElementById('playerimage');
+            
+                playlist.addEventListener('click', function() {
+                    var newBackgroundImage = 'url(imagestemplate/meseta1170b.jpg)';
+                    playerImage.setAttribute('data-bgimage', newBackgroundImage);
+                    playerImage.style.backgroundImage = newBackgroundImage;
+                });
+            }
+        </script>
+        -->
     </body>
 </html>
