@@ -34,12 +34,9 @@
 
         <!-- Custom schedule css -->
         <style>
-            .qt-schedule {
+            .qt-schedule-title {
                 text-align: center;
-                margin: 20px 0;
-            }
-            .qt-schedule h2 {
-                margin-bottom: 20px;
+                padding: 5px;
             }
             .qt-timeline {
                 display: flex;
@@ -47,27 +44,16 @@
                 align-items: center;
                 overflow-x: auto;
                 white-space: nowrap;
+                border-bottom: 1px solid #dddddd;
             }
             .qt-timeline-item {
                 display: inline-block;
                 text-align: center;
                 padding: 10px;
+                border-left: 3px solid #dddddd;
+                transition: background-color 0.3s ease;
                 position: relative;
                 flex: 0 0 auto;
-            }
-            .qt-timeline-item::after {
-                content: '';
-                width: 2px;
-                height: 50px;
-                background: #ddd;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translateX(-50%) translateY(-50%);
-                z-index: -1;
-            }
-            .qt-timeline-item:first-child::after {
-                display: none;
             }
             .qt-timeline-icon {
                 font-size: 30px;
@@ -75,9 +61,12 @@
             }
             .qt-timeline-time {
                 font-weight: bold;
+                margin-bottom: 5px;
+                font-size: 0.79em;
             }
             .qt-timeline-desc {
-                font-size: 14px;
+                font-size: 0.79em;
+                line-height: 1.4;
             }
             .qt-timeline-item.highlight {
                 background: #f0f0f07e;
@@ -87,6 +76,21 @@
             .qt-margin {
                 height: 20px;
                 background-color: white;
+            }
+            .qt-hidden {
+                display: none;
+            }
+            #qt-schedule-button {
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: #dd0e34;
+                color: #ffffff;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            #qt-schedule-button:hover {
+                background-color: #ff0442;
             }
         </style>
     </head>
@@ -149,129 +153,382 @@
                     </div>
                 </li>
                 <!-- CHANNELS LIST END ========================= -->
-                <!-- SCHEDULE ========================= -->
+                <!-- SCHEDULE MESETA 1 ========================= -->
                 <li class="qt-channel">
-                    <div class="qt-schedule">
-                        <h3 id="qtradiotitle" class="qt-text-shadow">MESETA 1 - Schedule</h3><br>
-                        <div class="qt-timeline" id="qt-timeline">
-                            <div class="qt-timeline-item" data-day="1">
-                                <div class="qt-timeline-icon">🎸</div>
-                                <div class="qt-timeline-time">08:00 - 10:00</div>
-                                <div class="qt-timeline-desc">Monday<br>Rock Classics<br><strong>Chuco</strong></div>
-                            </div>
-                            <div class="qt-timeline-item" data-day="2">
-                                <div class="qt-timeline-icon">🎷</div>
-                                <div class="qt-timeline-time">10:00 - 12:00</div>
-                                <div class="qt-timeline-desc">Tuesday<br>Morning Jazz<br><strong>Chuco</strong></div>
-                            </div>
-                            <div class="qt-timeline-item" data-day="3">
-                                <div class="qt-timeline-icon" id="michophone">&#x1F3A4;</div>
-                                <div class="qt-timeline-time">12:00 - 14:00</div>
-                                <div class="qt-timeline-desc">Wednesday<br>Pop Hits<br><strong>Chuco</strong></div>
-                            </div>
-                            <div class="qt-timeline-item" data-day="4">
-                                <div class="qt-timeline-icon">🌾</div>
-                                <div class="qt-timeline-time">14:00 - 16:00</div>
-                                <div class="qt-timeline-desc">Thursday<br>Country Roads<br><strong>Chuco</strong></div>
-                            </div>
-                            <div class="qt-timeline-item" data-day="5">
-                                <div class="qt-timeline-icon" id="headphone">&#x1F3A7;</div>
-                                <div class="qt-timeline-time">16:00 - 18:00</div>
-                                <div class="qt-timeline-desc">Friday<br>Dance Party<br><strong>Chuco</strong></div>
-                            </div>
-                            <div class="qt-timeline-item" data-day="6">
-                                <div class="qt-timeline-icon">🎻</div>
-                                <div class="qt-timeline-time">18:00 - 20:00</div>
-                                <div class="qt-timeline-desc">Saturday<br>Classical Evenings<br><strong>Chuco</strong></div>
-                            </div>
-                            <div class="qt-timeline-item" data-day="0">
-                                <div class="qt-timeline-icon">🌅</div>
-                                <div class="qt-timeline-time">20:00 - 22:00</div>
-                                <div class="qt-timeline-desc">Sunday<br>Chill Vibes<br><strong>Chuco</strong></div>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 id="qtradiotitle" class="qt-text-shadow qt-schedule-title">MESETA 1 - Current/ Schedule</h3><br>
+                        <ul>
+                            <!-- Monday -->
+                            <li class="qt-day">
+                                <h4 id="qtradiosubtitle" class="qt-thin qt-text-shadow small qt-schedule-title">Monday</h4>
+                                <div class="qt-timeline">
+                                    <div class="qt-timeline-item qt-hidden" data-day="1">
+                                        <div class="qt-timeline-time">00:00 - 05:00</div>
+                                        <div class="qt-timeline-desc">Rock 20's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="1">
+                                        <div class="qt-timeline-time">05:00 - 12:00</div>
+                                        <div class="qt-timeline-desc">Rock 80's 90's 00's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="1">
+                                        <div class="qt-timeline-time">12:00 - 13:00</div>
+                                        <div class="qt-timeline-desc">Rock Made in Peru<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="1">
+                                        <div class="qt-timeline-time">13:00 - 14:00</div>
+                                        <div class="qt-timeline-desc">Rock Made in Brazil<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="1">
+                                        <div class="qt-timeline-time">14:00 - 15:00</div>
+                                        <div class="qt-timeline-desc">Rock Made in Argentina<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="1">
+                                        <div class="qt-timeline-time">15:00 - 18:00</div>
+                                        <div class="qt-timeline-desc">Rock 80's 90's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="1">
+                                        <div class="qt-timeline-time">18:00 - 19:00</div>
+                                        <div class="qt-timeline-desc">Rock Contemporary<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="1">
+                                        <div class="qt-timeline-time">19:00 - 22:00</div>
+                                        <div class="qt-timeline-desc">Ballads in English<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="1">
+                                        <div class="qt-timeline-time">22:00 - 00:00</div>
+                                        <div class="qt-timeline-desc">Rock 80's 90's 00's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Tuesday -->
+                            <li class="qt-day">
+                                <h4 id="qtradiosubtitle" class="qt-thin qt-text-shadow small qt-schedule-title">Tuesday</h4>
+                                <div class="qt-timeline">
+                                    <div class="qt-timeline-item qt-hidden" data-day="2">
+                                        <div class="qt-timeline-time">00:00 - 05:00</div>
+                                        <div class="qt-timeline-desc">Rock 20's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="2">
+                                        <div class="qt-timeline-time">05:00 - 12:00</div>
+                                        <div class="qt-timeline-desc">Rock 80's 90's 00's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="2">
+                                        <div class="qt-timeline-time">12:00 - 13:00</div>
+                                        <div class="qt-timeline-desc">Rock Made in Peru<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="2">
+                                        <div class="qt-timeline-time">13:00 - 14:00</div>
+                                        <div class="qt-timeline-desc">Rock Made in Brazil<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="2">
+                                        <div class="qt-timeline-time">14:00 - 15:00</div>
+                                        <div class="qt-timeline-desc">Rock Made in Argentina<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="2">
+                                        <div class="qt-timeline-time">15:00 - 18:00</div>
+                                        <div class="qt-timeline-desc">Rock 80's 90's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="2">
+                                        <div class="qt-timeline-time">18:00 - 19:00</div>
+                                        <div class="qt-timeline-desc">Rock Contemporary<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="2">
+                                        <div class="qt-timeline-time">19:00 - 22:00</div>
+                                        <div class="qt-timeline-desc">Ballads in English<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="2">
+                                        <div class="qt-timeline-time">22:00 - 00:00</div>
+                                        <div class="qt-timeline-desc">Rock 80's 90's 00's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Wednesday -->
+                            <li class="qt-day">
+                                <h4 id="qtradiosubtitle" class="qt-thin qt-text-shadow small qt-schedule-title">Wednesday</h4>
+                                <div class="qt-timeline">
+                                    <div class="qt-timeline-item qt-hidden" data-day="3">
+                                        <div class="qt-timeline-time">00:00 - 05:00</div>
+                                        <div class="qt-timeline-desc">Rock 20's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="3">
+                                        <div class="qt-timeline-time">05:00 - 12:00</div>
+                                        <div class="qt-timeline-desc">Rock 80's 90's 00's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="3">
+                                        <div class="qt-timeline-time">12:00 - 13:00</div>
+                                        <div class="qt-timeline-desc">Rock Made in Peru<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="3">
+                                        <div class="qt-timeline-time">13:00 - 14:00</div>
+                                        <div class="qt-timeline-desc">Rock Made in Brazil<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="3">
+                                        <div class="qt-timeline-time">14:00 - 15:00</div>
+                                        <div class="qt-timeline-desc">Rock Made in Argentina<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="3">
+                                        <div class="qt-timeline-time">15:00 - 18:00</div>
+                                        <div class="qt-timeline-desc">Rock 80's 90's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="3">
+                                        <div class="qt-timeline-time">18:00 - 19:00</div>
+                                        <div class="qt-timeline-desc">Rock Contemporary<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="3">
+                                        <div class="qt-timeline-time">19:00 - 22:00</div>
+                                        <div class="qt-timeline-desc">Ballads in English<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="3">
+                                        <div class="qt-timeline-time">22:00 - 00:00</div>
+                                        <div class="qt-timeline-desc">Rock 80's 90's 00's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Thursday -->
+                            <li class="qt-day">
+                                <h4 id="qtradiosubtitle" class="qt-thin qt-text-shadow small qt-schedule-title">Thursday</h4>
+                                <div class="qt-timeline">
+                                    <div class="qt-timeline-item qt-hidden" data-day="4">
+                                        <div class="qt-timeline-time">00:00 - 05:00</div>
+                                        <div class="qt-timeline-desc">Rock 20's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="4">
+                                        <div class="qt-timeline-time">05:00 - 12:00</div>
+                                        <div class="qt-timeline-desc">Rock 80's 90's 00's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="4">
+                                        <div class="qt-timeline-time">12:00 - 13:00</div>
+                                        <div class="qt-timeline-desc">Rock Made in Peru<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="4">
+                                        <div class="qt-timeline-time">13:00 - 14:00</div>
+                                        <div class="qt-timeline-desc">Rock Made in Brazil<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="4">
+                                        <div class="qt-timeline-time">14:00 - 15:00</div>
+                                        <div class="qt-timeline-desc">Rock Made in Argentina<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="4">
+                                        <div class="qt-timeline-time">15:00 - 18:00</div>
+                                        <div class="qt-timeline-desc">Rock 80's 90's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="4">
+                                        <div class="qt-timeline-time">18:00 - 19:00</div>
+                                        <div class="qt-timeline-desc">Rock Contemporary<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="4">
+                                        <div class="qt-timeline-time">19:00 - 22:00</div>
+                                        <div class="qt-timeline-desc">Ballads in English<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="4">
+                                        <div class="qt-timeline-time">22:00 - 00:00</div>
+                                        <div class="qt-timeline-desc">Rock 80's 90's 00's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Friday -->
+                            <li class="qt-day">
+                                <h4 id="qtradiosubtitle" class="qt-thin qt-text-shadow small qt-schedule-title">Friday</h4>
+                                <div class="qt-timeline">
+                                    <div class="qt-timeline-item qt-hidden" data-day="5">
+                                        <div class="qt-timeline-time">00:00 - 05:00</div>
+                                        <div class="qt-timeline-desc">Rock 20's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="5">
+                                        <div class="qt-timeline-time">05:00 - 12:00</div>
+                                        <div class="qt-timeline-desc">Rock 80's 90's 00's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="5">
+                                        <div class="qt-timeline-time">12:00 - 13:00</div>
+                                        <div class="qt-timeline-desc">Rock Made in Peru<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="5">
+                                        <div class="qt-timeline-time">13:00 - 14:00</div>
+                                        <div class="qt-timeline-desc">Rock Made in Brazil<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="5">
+                                        <div class="qt-timeline-time">14:00 - 15:00</div>
+                                        <div class="qt-timeline-desc">Rock Made in Argentina<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="5">
+                                        <div class="qt-timeline-time">15:00 - 18:00</div>
+                                        <div class="qt-timeline-desc">Rock 80's 90's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="5">
+                                        <div class="qt-timeline-time">18:00 - 19:00</div>
+                                        <div class="qt-timeline-desc">Eletro Chopp<br><i class="fa-solid fa-microphone-lines"></i><i> DJ: BChuco</i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="5">
+                                        <div class="qt-timeline-time">19:00 - 22:00</div>
+                                        <div class="qt-timeline-desc">Ballads in English<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="5">
+                                        <div class="qt-timeline-time">22:00 - 00:00</div>
+                                        <div class="qt-timeline-desc">Rock 80's 90's 00's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Saturday -->
+                            <li class="qt-day">
+                                <h4 id="qtradiosubtitle" class="qt-thin qt-text-shadow small qt-schedule-title">Saturday</h4>
+                                <div class="qt-timeline">
+                                    <div class="qt-timeline-item qt-hidden" data-day="6">
+                                        <div class="qt-timeline-time">00:00 - 05:00</div>
+                                        <div class="qt-timeline-desc">Rock 20's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="6">
+                                        <div class="qt-timeline-time">05:00 - 12:00</div>
+                                        <div class="qt-timeline-desc">Rock 80's 90's 00's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="6">
+                                        <div class="qt-timeline-time">12:00 - 18:00</div>
+                                        <div class="qt-timeline-desc">Rock 00's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="6">
+                                        <div class="qt-timeline-time">18:00 - 19:00</div>
+                                        <div class="qt-timeline-desc">Rock en Meseta<br><i class="fa-solid fa-microphone-lines"></i><i> DJ: BChuco</i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="6">
+                                        <div class="qt-timeline-time">19:00 - 00:00</div>
+                                        <div class="qt-timeline-desc">Disco 80's 90's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Sunday -->
+                            <li class="qt-day">
+                                <h4 id="qtradiosubtitle" class="qt-thin qt-text-shadow small qt-schedule-title">Sunday</h4>
+                                <div class="qt-timeline">
+                                    <div class="qt-timeline-item qt-hidden" data-day="0">
+                                        <div class="qt-timeline-time">00:00 - 05:00</div>
+                                        <div class="qt-timeline-desc">Rock 20's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="0">
+                                        <div class="qt-timeline-time">05:00 - 08:00</div>
+                                        <div class="qt-timeline-desc">Rock 80's 90's 00's<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="0">
+                                        <div class="qt-timeline-time">08:00 - 09:00</div>
+                                        <div class="qt-timeline-desc">Busqueda del Logro<br><i class="fa-solid fa-microphone-lines"></i><i> DJ: Guilhermo Aranda</i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="0">
+                                        <div class="qt-timeline-time">09:00 - 11:00</div>
+                                        <div class="qt-timeline-desc">Meseta en 30 Años<br><i class="fa-solid fa-microphone-lines"></i><i> DJ: BChuco</i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="0">
+                                        <div class="qt-timeline-time">11:00 - 18:00</div>
+                                        <div class="qt-timeline-desc">Eurodance<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="0">
+                                        <div class="qt-timeline-time">18:00 - 00:00</div>
+                                        <div class="qt-timeline-desc">Classic Rock<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    <button id="qt-schedule-button" onclick="toggleFullSchedule()">Show Meseta 1 - Schedule</button>
+                    <div class="qt-margin"></div>
                 </li>
-                <li>
-                    <div class="qt-margin">
-                    </div>
-                </li>
+                <!-- SCHEDULE MESETA 1 END ========================= -->
+                <!-- SCHEDULE MESETA 2 ========================= -->
                 <li class="qt-channel">
-                    <div class="qt-schedule">
-                        <h3 id="qtradiotitle" class="qt-text-shadow">MESETA 2 - Schedule</h3><br>
-                        <div class="qt-timeline" id="qt-timeline">
-                            <div class="qt-timeline-item" data-day="1">
-                                <div class="qt-timeline-icon">🎸</div>
-                                <div class="qt-timeline-time">08:00 - 10:00</div>
-                                <div class="qt-timeline-desc">Monday<br>Rock Classics</div>
-                            </div>
-                            <div class="qt-timeline-item" data-day="2">
-                                <div class="qt-timeline-icon">🎷</div>
-                                <div class="qt-timeline-time">10:00 - 12:00</div>
-                                <div class="qt-timeline-desc">Tuesday<br>Morning Jazz</div>
-                            </div>
-                            <div class="qt-timeline-item" data-day="3">
-                                <div class="qt-timeline-icon" id="michophone">&#x1F3A4;</div>
-                                <div class="qt-timeline-time">12:00 - 14:00</div>
-                                <div class="qt-timeline-desc">Wednesday<br>Pop Hits</div>
-                            </div>
-                            <div class="qt-timeline-item" data-day="4">
-                                <div class="qt-timeline-icon">🌾</div>
-                                <div class="qt-timeline-time">14:00 - 16:00</div>
-                                <div class="qt-timeline-desc">Thursday<br>Country Roads</div>
-                            </div>
-                            <div class="qt-timeline-item" data-day="5">
-                                <div class="qt-timeline-icon" id="headphone">&#x1F3A7;</div>
-                                <div class="qt-timeline-time">16:00 - 18:00</div>
-                                <div class="qt-timeline-desc">Friday<br>Dance Party</div>
-                            </div>
-                            <div class="qt-timeline-item" data-day="6">
-                                <div class="qt-timeline-icon">🎻</div>
-                                <div class="qt-timeline-time">18:00 - 20:00</div>
-                                <div class="qt-timeline-desc">Saturday<br>Classical Evenings</div>
-                            </div>
-                            <div class="qt-timeline-item" data-day="0">
-                                <div class="qt-timeline-icon">🌅</div>
-                                <div class="qt-timeline-time">20:00 - 22:00</div>
-                                <div class="qt-timeline-desc">Sunday<br>Chill Vibes</div>
-                            </div>
-                            <div class="qt-timeline-item" data-day="1">
-                                <div class="qt-timeline-icon">🎸</div>
-                                <div class="qt-timeline-time">08:00 - 10:00</div>
-                                <div class="qt-timeline-desc">Monday<br>Rock Classics</div>
-                            </div>
-                            <div class="qt-timeline-item" data-day="2">
-                                <div class="qt-timeline-icon">🎷</div>
-                                <div class="qt-timeline-time">10:00 - 12:00</div>
-                                <div class="qt-timeline-desc">Tuesday<br>Morning Jazz</div>
-                            </div>
-                            <div class="qt-timeline-item" data-day="3">
-                                <div class="qt-timeline-icon" id="michophone">&#x1F3A4;</div>
-                                <div class="qt-timeline-time">12:00 - 14:00</div>
-                                <div class="qt-timeline-desc">Wednesday<br>Pop Hits</div>
-                            </div>
-                            <div class="qt-timeline-item" data-day="4">
-                                <div class="qt-timeline-icon">🌾</div>
-                                <div class="qt-timeline-time">14:00 - 16:00</div>
-                                <div class="qt-timeline-desc">Thursday<br>Country Roads</div>
-                            </div>
-                            <div class="qt-timeline-item" data-day="5">
-                                <div class="qt-timeline-icon" id="headphone">&#x1F3A7;</div>
-                                <div class="qt-timeline-time">16:00 - 18:00</div>
-                                <div class="qt-timeline-desc">Friday<br>Dance Party</div>
-                            </div>
-                            <div class="qt-timeline-item" data-day="6">
-                                <div class="qt-timeline-icon">🎻</div>
-                                <div class="qt-timeline-time">18:00 - 20:00</div>
-                                <div class="qt-timeline-desc">Saturday<br>Classical Evenings</div>
-                            </div>
-                            <div class="qt-timeline-item" data-day="0">
-                                <div class="qt-timeline-icon">🌅</div>
-                                <div class="qt-timeline-time">20:00 - 22:00</div>
-                                <div class="qt-timeline-desc">Sunday<br>Chill Vibes</div>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 id="qtradiotitle" class="qt-text-shadow qt-schedule-title">MESETA 2 - Current / Schedule</h3><br>
+                        <ul>
+                            <!-- Monday -->
+                            <li class="qt-day">
+                                <h4 id="qtradiosubtitle" class="qt-thin qt-text-shadow small qt-schedule-title">Monday</h4>
+                                <div class="qt-timeline">
+                                    <div class="qt-timeline-item qt-hidden" data-day="1">
+                                        <div class="qt-timeline-time">05:00 - 19:00</div>
+                                        <div class="qt-timeline-desc">Folk Perú<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Tuesday -->
+                            <li class="qt-day">
+                                <h4 id="qtradiosubtitle" class="qt-thin qt-text-shadow small qt-schedule-title">Tuesday</h4>
+                                <div class="qt-timeline">
+                                    <div class="qt-timeline-item qt-hidden" data-day="2">
+                                        <div class="qt-timeline-time">05:00 - 19:00</div>
+                                        <div class="qt-timeline-desc">Folk Perú<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Wednesday -->
+                            <li class="qt-day">
+                                <h4 id="qtradiosubtitle" class="qt-thin qt-text-shadow small qt-schedule-title">Wednesday</h4>
+                                <div class="qt-timeline">
+                                    <div class="qt-timeline-item qt-hidden" data-day="3">
+                                        <div class="qt-timeline-time">05:00 - 19:00</div>
+                                        <div class="qt-timeline-desc">Folk Perú<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Thursday -->
+                            <li class="qt-day">
+                                <h4 id="qtradiosubtitle" class="qt-thin qt-text-shadow small qt-schedule-title">Thursday</h4>
+                                <div class="qt-timeline">
+                                    <div class="qt-timeline-item qt-hidden" data-day="4">
+                                        <div class="qt-timeline-time">05:00 - 19:00</div>
+                                        <div class="qt-timeline-desc">Folk Perú<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Friday -->
+                            <li class="qt-day">
+                                <h4 id="qtradiosubtitle" class="qt-thin qt-text-shadow small qt-schedule-title">Friday</h4>
+                                <div class="qt-timeline">
+                                    <div class="qt-timeline-item qt-hidden" data-day="5">
+                                        <div class="qt-timeline-time">05:00 - 18:00</div>
+                                        <div class="qt-timeline-desc">Folk Perú<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="5">
+                                        <div class="qt-timeline-time">18:00 - 19:00</div>
+                                        <div class="qt-timeline-desc">Eletro Chopp<br><i class="fa-solid fa-microphone-lines"></i><i> DJ: BChuco</i></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Saturday -->
+                            <li class="qt-day">
+                                <h4 id="qtradiosubtitle" class="qt-thin qt-text-shadow small qt-schedule-title">Saturday</h4>
+                                <div class="qt-timeline">
+                                    <div class="qt-timeline-item qt-hidden" data-day="6">
+                                        <div class="qt-timeline-time">05:00 - 18:00</div>
+                                        <div class="qt-timeline-desc">Folk Perú<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="6">
+                                        <div class="qt-timeline-time">18:00 - 19:00</div>
+                                        <div class="qt-timeline-desc">Rock en Meseta<br><i class="fa-solid fa-microphone-lines"></i><i> DJ: BChuco</i></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Sunday -->
+                            <li class="qt-day">
+                                <h4 id="qtradiosubtitle" class="qt-thin qt-text-shadow small qt-schedule-title">Sunday</h4>
+                                <div class="qt-timeline">
+                                    <div class="qt-timeline-item qt-hidden" data-day="0">
+                                        <div class="qt-timeline-time">05:00 - 08:00</div>
+                                        <div class="qt-timeline-desc">Amanecer del Campesino<br><i class="fa-solid fa-microphone-lines"></i><i> DJ: Victor Chuco e Victor Canorio</i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="0">
+                                        <div class="qt-timeline-time">08:00 - 09:00</div>
+                                        <div class="qt-timeline-desc">Busqueda del Logro<br><i class="fa-solid fa-microphone-lines"></i><i> DJ: Guilhermo Aranda</i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="0">
+                                        <div class="qt-timeline-time">09:00 - 11:00</div>
+                                        <div class="qt-timeline-desc">Meseta en 30 Años<br><i class="fa-solid fa-microphone-lines"></i><i> DJ: BChuco</i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="0">
+                                        <div class="qt-timeline-time">11:00 - 12:00</div>
+                                        <div class="qt-timeline-desc">Eurodance<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                    <div class="qt-timeline-item qt-hidden" data-day="0">
+                                        <div class="qt-timeline-time">12:00 - 16:00</div>
+                                        <div class="qt-timeline-desc">Folk Perú<br><i class="fa-sharp fa-solid fa-music"></i></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    <button id="qt-schedule-button" onclick="toggleFullSchedule()">Show Meseta 2 - Schedule</button>
+                    <div class="qt-margin"></div>
                 </li>
 			</ul>
     </div>        
@@ -318,18 +575,53 @@
         <!-- MAIN JAVASCRIPT FILE ================================ -->
         <script src="js/qt-main.js"></script>
 
+        <!-- Script for social media icons -->
+        <script src="https://kit.fontawesome.com/4ab08ea2b2.js" crossorigin="anonymous"></script>
+
         <!-- SCRIPTS FOR SCHEDULE ================================ -->
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                var today = new Date().getDay(); // 0 (Sunday) - 6 (Saturday)
-                var timelineItems = document.querySelectorAll(".qt-timeline-item");
-        
-                timelineItems.forEach(function(item) {
-                    if (parseInt(item.getAttribute("data-day")) === today) {
-                        item.classList.add("highlight");
-                    }
-                });
+            const now = new Date();
+            const currentDay = now.getDay();  // Sunday - Saturday : 0 - 6
+            const currentHour = now.getHours();
+            const timelineItems = document.querySelectorAll('.qt-timeline-item');
+            let currentItem = null;
+
+            // Highlight and show current playing item only
+            timelineItems.forEach(item => {
+                const day = parseInt(item.getAttribute('data-day'));
+                const timeRange = item.querySelector('.qt-timeline-time').textContent.split(' - ');
+                const startHour = parseInt(timeRange[0].split(':')[0]);
+                const endHour = parseInt(timeRange[1].split(':')[0]);
+                
+                if (day === currentDay && currentHour >= startHour && currentHour < endHour) {
+                    item.classList.add('highlight');
+                    item.classList.remove('qt-hidden');
+                    currentItem = item;
+                } else {
+                    item.classList.add('qt-hidden');
+                }
             });
+
+            // Ensure the current item is shown, even if no current playing item
+            if (!currentItem && currentDay !== 0) {
+                const todayItems = document.querySelectorAll(`.qt-timeline-item[data-day="${currentDay}"]`);
+                if (todayItems.length > 0) {
+                    todayItems[0].classList.remove('qt-hidden');
+                }
+            }
+
+        function toggleFullSchedule() {
+            const scheduleItems = document.querySelectorAll('.qt-timeline-item');
+            const toggleButton = document.getElementById('qt-schedule-button');
+
+            scheduleItems.forEach(item => {
+                if (item.classList.contains('qt-hidden')) {
+                    item.classList.remove('qt-hidden');
+                } else {
+                    item.classList.add('qt-hidden');
+                }
+            });
+        }
         </script>
 
         <!-- SCRIPTS FOR BACKGROUND IMAGE ================================ -->
