@@ -1,0 +1,58 @@
+.qt-schedule-title {
+    text-align: center;
+    padding: 5px;
+}
+.qt-timeline {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-bottom: 1px solid #dddddd;
+}
+.qt-timeline-item {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    border-left: 3px solid #dddddd;
+    transition: background-color 0.3s ease;
+    position: relative;
+    flex: 0 0 auto;
+}
+.qt-timeline-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.qt-timeline-time {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.79em;
+}
+.qt-timeline-desc {
+    font-size: 0.79em;
+    line-height: 1.4;
+}
+.qt-timeline-item.highlight {
+    background: #f0f0f07e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.qt-margin {
+    height: 20px;
+    background-color: white;
+}
+.qt-hidden {
+    display: none;
+}
+#qt-schedule-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #dd0e34;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#qt-schedule-button:hover {
+    background-color: #ff0442;
+}

@@ -9,17 +9,17 @@
         
         <link rel="shortcut icon" href="imagestemplate/favicon.ico" type="image/x-icon">
 
-        <!-- icons -->
+        <!-- Icons -->
         <link href='fonts/dripicons/webfont.css' rel='stylesheet' type='text/css'>
         <link href='fonts/qticons/qticons.css' rel='stylesheet' type='text/css'>
         
-        <!-- slick slider -->
+        <!-- Slick slider -->
         <link href='components/slick/slick.css' rel='stylesheet' type='text/css'>
         
-        <!-- swipebox -->
+        <!-- Swipebox -->
         <link href='components/swipebox/src/css/swipebox.min.css' rel='stylesheet' type='text/css'>
         
-        <!-- countdown component -->
+        <!-- Countdown component -->
         <link rel="stylesheet" type="text/css" href="components/countdown/css/jquery.classycountdown.css" />
 
         <!-- QT 360 PLAYER component -->
@@ -32,128 +32,66 @@
         <!-- Custom typography settings and google fonts -->
         <link rel="stylesheet" href="css/qt-typography.css">
 
-        <!-- Custom schedule css -->
-        <style>
-            .qt-schedule-title {
-                text-align: center;
-                padding: 5px;
-            }
-            .qt-timeline {
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-                overflow-x: auto;
-                white-space: nowrap;
-                border-bottom: 1px solid #dddddd;
-            }
-            .qt-timeline-item {
-                display: inline-block;
-                text-align: center;
-                padding: 10px;
-                border-left: 3px solid #dddddd;
-                transition: background-color 0.3s ease;
-                position: relative;
-                flex: 0 0 auto;
-            }
-            .qt-timeline-icon {
-                font-size: 30px;
-                margin-bottom: 10px;
-            }
-            .qt-timeline-time {
-                font-weight: bold;
-                margin-bottom: 5px;
-                font-size: 0.79em;
-            }
-            .qt-timeline-desc {
-                font-size: 0.79em;
-                line-height: 1.4;
-            }
-            .qt-timeline-item.highlight {
-                background: #f0f0f07e;
-                border-radius: 10px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            }
-            .qt-margin {
-                height: 20px;
-                background-color: white;
-            }
-            .qt-hidden {
-                display: none;
-            }
-            #qt-schedule-button {
-                padding: 10px 20px;
-                font-size: 16px;
-                background-color: #dd0e34;
-                color: #ffffff;
-                border: none;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
-            }
-            #qt-schedule-button:hover {
-                background-color: #ff0442;
-            }
-        </style>
+        <!-- Custom schedule CSS -->
+        <link rel="stylesheet" href="schedule.css">
     </head>
+
     <body>
-        
-    <!-- QT HEADER END ================================ -->
     <div class="qt-parentcontainer">        
-		<!-- PLAYER ========================= -->
-		<div id="qtplayercontainer" data-playervolume="true" data-accentcolor="#dd0e34" data-accentcolordark="#ff0442" data-textcolor="#ffffff" data-soundmanagerurl="./components/soundmanager/swf/" class="qt-playercontainer qt-playervolume qt-clearfix qt-content-primary">
-			<div class="qt-playercontainer-content qt-vertical-padding-m">
-				<div class="qt-playercontainer-header" style="height: 120px;">
-					<h5 class="qt-text-shadow small">Now On</h5>
-					<h3 id="qtradiotitle" class="qt-text-shadow">MESETA 1</h3>
-					<h4 id="qtradiosubtitle" class="qt-thin qt-text-shadow small">Rock & Pop</h4>
-				</div>
-				<div class="qt-playercontainer-musicplayer" id="qtmusicplayer">
-					<div class="qt-musicplayer">
-						<div class="ui360 ui360-vis qt-ui360">
-							<a id="playerlink" href="http://stream.zeno.fm/qw0ngtsc9x8uv"></a>
-<!-- para atualizar  ========================= -->											
-<!-- finaliza a seção  ========================= -->							
-						</div>
-					</div>
-				</div>
-				<div class="qt-playercontainer-data qt-container qt-text-shadow small">
-					<h6 class="qt-inline-textdeco">
-						<span>Current track</span>
-					</h6>
-					<div class="qt-t qt-current-track">
-						<h5 id="qtFeedPlayerTrack">TITLE</h5>
-						<h6 class="qt-small" id="qtFeedPlayerAuthor">ARTIST</h6>
-					</div>
-					<hr class="qt-inline-textdeco">
-				</div>
-			</div>
-			<div id="playerimage" class="qt-header-bg" data-bgimage="imagestemplate/meseta1170a.jpg">
-				<img src="imagestemplate/meseta1170a.jpg" alt="Featured image" width="690" height="302">
-			</div>
-		</div>
-		<!-- this is for xml radio feed -->
-		<div id="qtShoutcastFeedData" class="hidden" data-style="" data-channel="1" data-host="173.192.105.231" data-port="3540"></div>
-		<!-- PLAYER END ========================= -->
-		<!-- CHANNELS LIST ========================= -->
-		<div class="qt-part-channels-list">
-			<ul class="qt-content-aside qt-channelslist qt-negative qt-content-primary">
-				<li class="qt-channel">
-					<a href="#!" class="qt-ellipsis" data-title="MESETA 1" data-subtitle="Rock & Pop" data-background="" data-logo="" data-playtrack="http://stream.zeno.fm/qw0ngtsc9x8uv" data-host="173.192.105.231" data-port="3540" data-stats_path="" data-played_path="" data-channel="">
-						<img src="imagestemplate/close-up-of-an-electric-guitar-on-wooden-surface.jpg" alt="logo" class="qt-radiologo dripicons-media-play" width="80" height="80">
-						<i class="dripicons-media-play"></i> MESETA 1 - Rock & Pop
-					</a>
-				</li>
-				<li class="qt-channel">
-					<a href="#!" class="qt-ellipsis" data-title="MESETA 2" data-subtitle="Folk - Perú" data-background="" data-logo="" data-playtrack="http://stream.zeno.fm/7ux5x5c3k0hvv" data-host="173.192.105.231" data-port="3540" data-stats_path="" data-played_path="" data-channel="">
-						<img src="imagestemplate/bamboo-flute-2897460_1280.jpg" alt="logo" class="qt-radiologo" width="80" height="80">
-						<i class="dripicons-media-play"></i> MESETA 2 - Folk - Perú
-					</a>
-				</li>
-                <li>
-                    <div class="qt-margin">
+    <!-- PLAYER ======================================= -->
+        <div id="qtplayercontainer" data-playervolume="true" data-accentcolor="#dd0e34" data-accentcolordark="#ff0442" data-textcolor="#ffffff" data-soundmanagerurl="./components/soundmanager/swf/" class="qt-playercontainer qt-playervolume qt-clearfix qt-content-primary">
+            <div class="qt-playercontainer-content qt-vertical-padding-m">
+                <div class="qt-playercontainer-header" style="height: 120px;">
+                    <h5 class="qt-text-shadow small">Now On</h5>
+                    <h3 id="qtradiotitle" class="qt-text-shadow">MESETA 1</h3>
+                    <h4 id="qtradiosubtitle" class="qt-thin qt-text-shadow small">Rock & Pop</h4>
+                </div>
+                <div class="qt-playercontainer-musicplayer" id="qtmusicplayer">
+                    <div class="qt-musicplayer">
+                        <div class="ui360 ui360-vis qt-ui360">
+                            <a id="playerlink" href="http://stream.zeno.fm/qw0ngtsc9x8uv"></a>
+                        </div>
                     </div>
+                </div>
+    <!-- ENDS THE SECTION  ============================ -->
+                <div class="qt-playercontainer-data qt-container qt-text-shadow small">
+                    <h6 class="qt-inline-textdeco">
+                        <span>Current track</span>
+                    </h6>
+                    <div class="qt-t qt-current-track">
+                        <h5 id="qtFeedPlayerTrack">TITLE</h5>
+                        <h6 class="qt-small" id="qtFeedPlayerAuthor">ARTIST</h6>
+                    </div>
+                    <hr class="qt-inline-textdeco">
+                </div>
+            </div>
+            <div id="playerimage" class="qt-header-bg" data-bgimage="imagestemplate/meseta1170a.jpg">
+                <img src="imagestemplate/meseta1170a.jpg" alt="Featured image" width="690" height="302">
+            </div>
+        </div>
+    <!-- This is for xml radio feed =================== -->
+        <div id="qtShoutcastFeedData" class="hidden" data-style="" data-channel="1" data-host="173.192.105.231" data-port="3540"></div>
+    <!-- PLAYER END =================================== -->
+    <!-- CHANNELS LIST ================================ -->
+        <div class="qt-part-channels-list">
+            <ul class="qt-content-aside qt-channelslist qt-negative qt-content-primary">
+                <li class="qt-channel">
+                    <a href="#!" class="qt-ellipsis" data-title="MESETA 1" data-subtitle="Rock & Pop" data-background="imagestemplate/meseta1170a.jpg" data-logo="" data-playtrack="http://stream.zeno.fm/qw0ngtsc9x8uv" data-host="173.192.105.231" data-port="3540" data-stats_path="" data-played_path="" data-channel="">
+                        <img src="imagestemplate/close-up-of-an-electric-guitar-on-wooden-surface.jpg" alt="logo" class="qt-radiologo dripicons-media-play" width="80" height="80">
+                        <i class="dripicons-media-play"></i> MESETA 1 - Rock & Pop
+                    </a>
                 </li>
-                <!-- CHANNELS LIST END ========================= -->
-                <!-- SCHEDULE MESETA 1 ========================= -->
+                <li class="qt-channel">
+                    <a href="#!" class="qt-ellipsis" data-title="MESETA 2" data-subtitle="Folk - Perú" data-background="imagestemplate/bamboo-flute-2897460_1280.jpg" data-logo="" data-playtrack="http://stream.zeno.fm/7ux5x5c3k0hvv" data-host="173.192.105.231" data-port="3540" data-stats_path="" data-played_path="" data-channel="">
+                        <img src="imagestemplate/bamboo-flute-2897460_1280.jpg" alt="logo" class="qt-radiologo" width="80" height="80">
+                        <i class="dripicons-media-play"></i> MESETA 2 - Folk - Perú
+                    </a>
+                </li>
+                <li>
+                    <div class="qt-margin"></div>
+                </li>    
+    <!-- CHANNELS LIST END ============================ -->
+    <!-- SCHEDULE MESETA 1 ============================ -->
                 <li class="qt-channel">
                     <h3 id="qtradiotitle" class="qt-text-shadow qt-schedule-title">MESETA 1 - Current/ Schedule</h3><br>
                         <ul>
@@ -427,8 +365,8 @@
                     <button id="qt-schedule-button" onclick="toggleFullSchedule()">Show Meseta 1 - Schedule</button>
                     <div class="qt-margin"></div>
                 </li>
-                <!-- SCHEDULE MESETA 1 END ========================= -->
-                <!-- SCHEDULE MESETA 2 ========================= -->
+    <!-- SCHEDULE MESETA 1 END ======================== -->
+    <!-- SCHEDULE MESETA 2 ============================ -->
                 <li class="qt-channel">
                     <h3 id="qtradiotitle" class="qt-text-shadow qt-schedule-title">MESETA 2 - Current / Schedule</h3><br>
                         <ul>
@@ -532,11 +470,7 @@
                 </li>
 			</ul>
     </div>        
-        <!-- QT BODY END ================================ -->
-
-        <!-- CHAT BUTTON SCRIPTS ================================ -->
-        <script>window['CboxReady'] = function (Cbox) {Cbox('button', '3-3538038-zlWtWH');}</script>
-        <script src="https://static.cbox.ws/embed/2.js" async></script>
+    <!-- QT BODY END ================================= -->
 
         <!-- QT FOOTER SCRIPTS ================================ -->
         <script src="js/modernizr-2.8.3-respond-1.4.2.min.js"></script>
@@ -575,69 +509,18 @@
         <!-- MAIN JAVASCRIPT FILE ================================ -->
         <script src="js/qt-main.js"></script>
 
+        <!-- CHAT BUTTON SCRIPTS ================================ -->
+        <script>window['CboxReady'] = function (Cbox) {Cbox('button', '3-3538038-zlWtWH');}</script>
+        <script src="https://static.cbox.ws/embed/2.js" async></script>
+
         <!-- Script for social media icons -->
         <script src="https://kit.fontawesome.com/4ab08ea2b2.js" crossorigin="anonymous"></script>
 
         <!-- SCRIPTS FOR SCHEDULE ================================ -->
-        <script>
-            const now = new Date();
-            const currentDay = now.getDay();  // Sunday - Saturday : 0 - 6
-            const currentHour = now.getHours();
-            const timelineItems = document.querySelectorAll('.qt-timeline-item');
-            let currentItem = null;
-
-            // Highlight and show current playing item only
-            timelineItems.forEach(item => {
-                const day = parseInt(item.getAttribute('data-day'));
-                const timeRange = item.querySelector('.qt-timeline-time').textContent.split(' - ');
-                const startHour = parseInt(timeRange[0].split(':')[0]);
-                const endHour = parseInt(timeRange[1].split(':')[0]);
-                
-                if (day === currentDay && currentHour >= startHour && currentHour < endHour) {
-                    item.classList.add('highlight');
-                    item.classList.remove('qt-hidden');
-                    currentItem = item;
-                } else {
-                    item.classList.add('qt-hidden');
-                }
-            });
-
-            // Ensure the current item is shown, even if no current playing item
-            if (!currentItem && currentDay !== 0) {
-                const todayItems = document.querySelectorAll(`.qt-timeline-item[data-day="${currentDay}"]`);
-                if (todayItems.length > 0) {
-                    todayItems[0].classList.remove('qt-hidden');
-                }
-            }
-
-        function toggleFullSchedule() {
-            const scheduleItems = document.querySelectorAll('.qt-timeline-item');
-            const toggleButton = document.getElementById('qt-schedule-button');
-
-            scheduleItems.forEach(item => {
-                if (item.classList.contains('qt-hidden')) {
-                    item.classList.remove('qt-hidden');
-                } else {
-                    item.classList.add('qt-hidden');
-                }
-            });
-        }
-        </script>
-
+        <script src="js/schedule.js"></script>
+        
         <!-- SCRIPTS FOR BACKGROUND IMAGE ================================ -->
-        <!-- Conferir este trecho com calma depois e corrigi o necessário
-        <script>
-            window.onload = function() {
-                var playlist = document.querySelector('a[data-title="MESETA 2"]');
-                var playerImage = document.getElementById('playerimage');
-            
-                playlist.addEventListener('click', function() {
-                    var newBackgroundImage = 'url(imagestemplate/meseta1170b.jpg)';
-                    playerImage.setAttribute('data-bgimage', newBackgroundImage);
-                    playerImage.style.backgroundImage = newBackgroundImage;
-                });
-            }
-        </script>
-        -->
+        <script src="js/background-image.js"></script>
+
     </body>
 </html>
