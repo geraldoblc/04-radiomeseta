@@ -20,13 +20,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Listen for visibility change events
+    // Event listeners for visibility change and iOS-specific events
     document.addEventListener('visibilitychange', () => {
         if (document.hidden) {
             pausePlayer();
         } else {
             resumePlayer();
         }
+    });
+
+    window.addEventListener('pagehide', () => {
+        pausePlayer();
+    });
+
+    window.addEventListener('pageshow', () => {
+        resumePlayer();
     });
 
     // Resume playback if the page was reloaded and wasPlaying was true
